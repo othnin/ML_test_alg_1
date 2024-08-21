@@ -3,11 +3,11 @@ import joblib
 import pandas as pd
 
 class ExtraTreesClassifier:
-    def __init__(self):
-        path_to_artifacts = "./"
-        self.values_fill_missing =  joblib.load(path_to_artifacts + "train_mode.joblib")
-        self.encoders = joblib.load(path_to_artifacts + "encoders.joblib")
-        self.model = joblib.load(path_to_artifacts + "extra_trees.joblib")
+    def __init__(self, path_train, path_encoder, path_model):
+        #path_to_artifacts = "./"
+        self.values_fill_missing =  joblib.load(path_train) #path_to_artifacts + "train_mode.joblib")
+        self.encoders = joblib.load(path_encoder)  #path_to_artifacts + "encoders.joblib")
+        self.model = joblib.load(path_model)  #path_to_artifacts + "extra_trees.joblib")
 
     def preprocessing(self, input_data):
         # JSON to pandas DataFrame
